@@ -1,0 +1,60 @@
+-Filtres gallerie bug ( + certains n'ont pas les bons mois et d'autres restent vides ) //
+  
+   (!type
+    ? data?.events
+    : data?.events)
+
+     Devenu (composant Events) :
+
+  (!type
+    ? data?.events
+    : data?.events.filter(event => event.type === type)) 
+
+--------------
+
+const changeValue = (newValue) => {
+  onChange();  // on ne passait pas `newValue`
+  setValue(newValue);
+  setCollapsed(newValue);
+};
+
+   Devenu (composant Select):
+
+   const changeValue = (newValue) => {
+  onChange(newValue);  // on passe la nouvelle valeur
+  setValue(newValue);
+  setCollapsed(true);  // on veut fermer le sélecteur après la sélection
+};
+
+---------------
+
+Le tableau des mois ne commencait pas à 0
+Autre chose mais j'ai zaapé
+
+
+
+
+
+
+
+-Image blanche dans slider
+
+
+
+
+-affichage image slider du plus ancien au plus recent
+
+
+
+
+
+
+-message confirmation d'envoi sur formulaire de contact //
+
+onsucces() n'etait appelé nulle part dans le composant Form
+   
+
+
+vignette footer ( image + nom + mois ) fonctionne pas ( afficher projet concerné )
+
+
