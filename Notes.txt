@@ -1,4 +1,4 @@
--Filtres gallerie bug ( + certains n'ont pas les bons mois et d'autres restent vides ) //
+- Filtres gallerie bug  :
   
    (!type
     ? data?.events
@@ -26,7 +26,9 @@ const changeValue = (newValue) => {
   setCollapsed(true);  // on veut fermer le sélecteur après la sélection
 };
 
----------------
+-------------------
+
+- Certaines n'ont pas les bons mois et d'autres restent vides 
 
 Le tableau des mois ne commencait pas à 0
 Autre chose mais j'ai zaapé
@@ -37,24 +39,50 @@ Autre chose mais j'ai zaapé
 
 
 
--Image blanche dans slider
 
-
-
-
--affichage image slider du plus ancien au plus recent
-
+- Affichage image slider du plus ancien au plus recent
+    
+      Inverser -1 et 1 dans : 
+      new Date(evtA.date) < new Date(evtB.date) ? -1 : 1 
 
 
 
 
 
--message confirmation d'envoi sur formulaire de contact //
+- Image blanche dans le slider
 
-onsucces() n'etait appelé nulle part dans le composant Form
+const nextCard = () => {
+    setTimeout(() => setIndex(index < byDateDesc.length ? index + 1 : 0), 5000);
+  };
+
+            Devenu : ( ça sortait des limites du tableau)
+
+const nextCard = () => {
+    setTimeout(
+      () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
+      5000
+    );
+  };
+
+
+
+
+
+
+
+
+- Message confirmation d'envoi sur formulaire de contact :
+
+onsucces() n'etait appelé nulle part dans le composant <Form />
    
 
 
 vignette footer ( image + nom + mois ) fonctionne pas ( afficher projet concerné )
+
+ -> /ou imageSrc et imageAlt qui devraient etre cover & description / ou valeure par defaut? car actuellement aucun "last"
+        -> Aucune props n'est recuperée 
+
+
+
 
 
