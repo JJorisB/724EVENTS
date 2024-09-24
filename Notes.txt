@@ -84,5 +84,12 @@ vignette footer ( image + nom + mois ) fonctionne pas ( afficher projet concernÃ
 
 
 
+erreurs console :
+
+Logo : camel case sur font family 
+vignette footer : rajouter condition 'last'
+Keys slider : keys identiques -> modification event.id -> _.title
+probleme structure slider : Remplacer fragment & mettre la key dedans
+
 
 
