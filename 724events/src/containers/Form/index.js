@@ -11,9 +11,6 @@ const mockContactApi = () =>
 
 const Form = ({ onSuccess, onError }) => {
   const [sending, setSending] = useState(false);
-  const [message, setMessage] = useState("");
-  const [name, setName] = useState("");
-  const [firstname, setFirstname] = useState("");
   const sendContact = useCallback(
     async (evt) => {
       evt.preventDefault();
@@ -35,18 +32,8 @@ const Form = ({ onSuccess, onError }) => {
     <form onSubmit={sendContact}>
       <div className="row">
         <div className="col">
-          <Field
-            placeholder=""
-            label="Nom"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <Field
-            placeholder=""
-            label="Prénom"
-            onChange={(e) => setFirstname(e.target.value)}
-            value={firstname}
-          />
+          <Field placeholder="" label="Nom" />
+          <Field placeholder="" label="Prénom" />
           <Select
             selection={["Personel", "Entreprise"]}
             onChange={() => null}
@@ -61,11 +48,9 @@ const Form = ({ onSuccess, onError }) => {
         </div>
         <div className="col">
           <Field
-            value={message}
             placeholder="message"
             label="Message"
             type={FIELD_TYPES.TEXTAREA}
-            onChange={(e) => setMessage(e.target.value)}
           />
         </div>
       </div>

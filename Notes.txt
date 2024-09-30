@@ -83,13 +83,32 @@ vignette footer ( image + nom + mois ) fonctionne pas ( afficher projet concernÃ
         -> Aucune props n'est recuperÃ©e 
 
 
+Menu navigation ne fonctionne pas :
+   -> Ajouter les id corresp. sur la page
+
 
 erreurs console :
 
 Logo : camel case sur font family 
+
 vignette footer : rajouter condition 'last'
+
 Keys slider : keys identiques -> modification event.id -> _.title
+
 probleme structure slider : Remplacer fragment & mettre la key dedans
+
+rajouter un read only dans le slider 
+
+erreur read properties of undefines : data?. focus pouvait etre undefined -> 
+const byDateDesc = data?.focus.sort((evtA, evtB) =>
+    new Date(evtA.date) < new Date(evtB.date) ? 1 : -1
+  );
+
+  devenu : 
+
+const byDateDesc = data?.focus ? data.focus.sort((evtA, evtB) =>
+  new Date(evtA.date) < new Date(evtB.date) ? 1 : -1
+) : [];
 
 
 
